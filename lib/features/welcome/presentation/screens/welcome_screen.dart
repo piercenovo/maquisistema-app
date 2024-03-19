@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:maquisistema_app/core/helpers/navigator.dart';
-import 'package:maquisistema_app/features/pokemos/presentation/screens/home_screen.dart';
+import 'package:maquisistema_app/features/pokemon/presentation/screens/pokemons_screen.dart';
 import 'package:maquisistema_app/features/welcome/domain/entities/time_entity.dart';
 import 'package:maquisistema_app/features/welcome/presentation/widgets/logo_widget.dart';
 import 'package:maquisistema_app/features/welcome/presentation/widgets/time_widget.dart';
@@ -27,7 +27,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     await Future.delayed(const Duration(seconds: 3)); // Espera 3 segundos
 
     // Navegar a la siguiente pantalla
-    pushAndReplaceToPage(context, const HomeScreen());
+    pushAndReplaceToPage(context, const PokemonsScreen());
   }
 
   @override

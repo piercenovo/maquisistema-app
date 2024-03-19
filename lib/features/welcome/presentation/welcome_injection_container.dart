@@ -7,7 +7,6 @@ import 'package:maquisistema_app/features/welcome/domain/usecases/get_time_useca
 import 'package:maquisistema_app/features/welcome/presentation/cubits/time_cubit.dart';
 
 Future<void> welcomeInjectionContainer() async {
-  //! CatBreeds
   // Cubits
   sl.registerFactory<TimeCubit>(
     () => TimeCubit(getTimeUseCase: sl.call()),
