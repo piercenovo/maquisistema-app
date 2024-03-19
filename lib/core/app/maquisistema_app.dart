@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:maquisistema_app/core/di/injection_container.dart';
+import 'package:maquisistema_app/features/welcome/presentation/screens/welcome_screen.dart';
 import 'package:maquisistema_app/core/theme/theme.dart';
-import 'package:maquisistema_app/features/welcome_screen.dart';
+import 'package:maquisistema_app/features/welcome/presentation/cubits/time_cubit.dart';
 
 class MaquisistemaApp extends StatelessWidget {
   const MaquisistemaApp({super.key});
@@ -12,7 +14,9 @@ class MaquisistemaApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: theme(context),
       home: MultiBlocProvider(
-        providers: const [],
+        providers: [
+          BlocProvider(create: (_) => sl<TimeCubit>()..getTime()),
+        ],
         child: const WelcomeScreen(),
       ),
     );
